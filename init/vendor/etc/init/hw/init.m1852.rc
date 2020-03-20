@@ -4,3 +4,60 @@ on early-init
 on property:sys.usb.config=none
     rm /config/usb_gadget/g1/configs/b.1/f4
     rm /config/usb_gadget/g1/configs/b.1/f5
+
+on boot
+    # HQ add for foursemi bsp node permission by zhengwu start
+    chmod 0664 /sys/devices/platform/soc/a80000.i2c/i2c-2/2-0034/smartpa_ictype
+    chown system system /sys/devices/platform/soc/a80000.i2c/i2c-2/2-0034/smartpa_ictype
+    # HQ add for foursemi bsp node permission by zhengwu end
+
+    # HQ add for foursemi selinux by zhengwu start
+    restorecon /sys/devices/platform/soc/a80000.i2c/i2c-2/2-0034/smartpa_ictype
+    # HQ add for foursemi selinux by zhengwu end
+
+    # Huaqin add for M1852 by wangxiang at 2018/5/15 start
+    chmod 0664 /sys/class/meizu/keys/hall_status
+    chown system system /sys/class/meizu/keys/hall_status
+    # Huaqin add for M1852 by wangxiang at 2018/5/15 end
+
+    # Huaqin modify for M1852-7 by zhaojunhai1 at 2018/5/4 start
+    chmod 666 /dev/fpsdev0
+    # Huaqin modify for M1852-7 by zhaojunhai1 at 2018/5/4 end
+
+    # Huaqin modify for M1852-150 by zhaojunhai1 at 2018/5/8 start
+    chmod 664 /dev/sunwave_fp
+    chown system system /dev/sunwave_fp
+    # Huaqin modify for M1852-150 by zhaojunhai1 at 2018/5/8 end
+
+    # Huaqin modify for #769498 by lihua at 2018/07/02 start
+    chmod 664 /dev/mz_rpmb_ctl
+    chown system system /dev/mz_rpmb_ctl
+    # Huaqin modify for #769498 by lihua at 2018/07/02 end
+
+    # HQ add for node permission by likai start
+    chown system system /sys/class/flashlightdrv/kd_camera_flashlight/flash1
+    chown system system /sys/class/flashlightdrv/kd_camera_flashlight/flash2
+    # HQ add for node permission by likai end
+
+    # For flash-led, add by wujinwei@meizu.com
+    chmod 0666 /sys/class/flashlightdrv/kd_camera_flashlight/flash1
+    chmod 0666 /sys/class/flashlightdrv/kd_camera_flashlight/flash2
+
+    # HQ add for bsp node permission by zhengwu start
+    chown system system /sys/class/leds/mx-led/brightness
+    chown system system /sys/class/leds/mx-led/blink
+    chown system system /sys/class/leds/mx-led/breath
+    # HQ add for bsp node permission by zhengwu end
+
+# Huaqin add for ZQL1898-NA by liunianliang at 2018/6/19 start
+# for reduce power consumption.
+on property:sys.boot_completed=1
+    write /sys/class/gpio/export 76
+    write /sys/class/gpio/export 79
+    write /sys/class/gpio/gpio76/direction out
+    write /sys/class/gpio/gpio79/direction out
+    write /sys/class/gpio/gpio76/value 0
+    write /sys/class/gpio/gpio79/value 0
+    write /sys/class/gpio/unexport 76
+    write /sys/class/gpio/unexport 79
+# Huaqin add for ZQL1898-NA by liunianliang at 2018/6/19 end
