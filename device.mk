@@ -11,6 +11,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-mokee
 
+# Properties
+-include $(LOCAL_PATH)/vendor_prop.mk
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2220
 TARGET_SCREEN_WIDTH := 1080
