@@ -36,3 +36,9 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
 # inherit from the proprietary version
 -include vendor/meizu/m1852/BoardConfigVendor.mk
+
+# Treble
+# we gonna try that hope it works
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+BOARD_VNDK_VERSION := current
+PRODUCT_VENDOR_MOVE_ENABLED := true
