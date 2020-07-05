@@ -23,13 +23,3 @@ ro.diag.enc_wechat_key=1
 #Huaqin add for 819778 by chenqiang at 20180831 start
 vendor.audio.adm.buffering.ms=3
 #Huaqin add for 819778 by chenqiang at 20180831 end
-
-#add volte assert for m1852
-persist.dbg.ims_volte_enable=1
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
-persist.radio.rat_on=combine
-persist.radio.data_ltd_sys_ind=1
-persist.radio.data_con_rprt=1
-persist.radio.calls.on.ims=1

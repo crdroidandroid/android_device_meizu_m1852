@@ -22,7 +22,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Inherit from m1852 device
 $(call inherit-product, device/meizu/m1852/device.mk)
 
-# Inherit some common LOS stuff.
+# Inherit some common MoKee stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 
@@ -30,14 +30,14 @@ PRODUCT_NAME := lineage_m1852
 PRODUCT_BRAND := Meizu
 PRODUCT_DEVICE := m1852
 PRODUCT_MANUFACTURER := Meizu
-PRODUCT_MODEL := M1852
+PRODUCT_MODEL := meizu X8
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="M1852" \
-    PRODUCT_NAME="meizu_M1852_CN" \
-    PRIVATE_BUILD_DESC="meizu_M1852_CN-user 8.1.0 OPM1.171019.026 1575272080 release-keys"
+    PRODUCT_NAME="meizu_X8" \
+    PRIVATE_BUILD_DESC="meizu_X8-user 8.1.0 OPM1.171019.026 1556996821 release-keys"
 
-BUILD_FINGERPRINT := Meizu/meizu_M1852_CN/M1852:8.1.0/OPM1.171019.026/1575272080:user/release-keys
+BUILD_FINGERPRINT := Meizu/meizu_X8/X8:8.1.0/OPM1.171019.026/1556996821:user/release-keys
 
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.sf.lcd_density=400
